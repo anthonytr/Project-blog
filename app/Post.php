@@ -7,20 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    use Sluggable;
+    //use Sluggable;
 
     /**
      * Return the sluggable configuration array for this model.
      *
      * @return array
      */
-    public function sluggable()
+    public function tags()
     {
-        return [
-            'slug' => [
-                'source'   => 'title',
-                'onUpdate' => true
-            ]
-        ];
+        return $this->morphToMany('App\Tag', 'taggable');
     }
 }
