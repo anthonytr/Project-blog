@@ -7,7 +7,7 @@
             @foreach($posts as $post)
             <div class="card mb-4">
                 @if ($post->image)
-                    <img src="{{ $post->get_image }}" class="card-img-top">
+                    <img src="{{ $post->image }}" class="card-img-top">
                 @elseif ($post->iframe)
                     <div class="embed-responsive embed-responsive-16by9">
                     {!! $post->iframe !!}
@@ -16,7 +16,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $post->title }} </h5>
                     <p class="card-text">
-                        {{ $post->get_excerpt }}
+                        {{ $post->excerpt }}
                         <a href="{{ route('posts.single', ['slug' => $post->slug]) }}">Leer mas</a>
                     </p>
                     <p class="text-muted mb-0">

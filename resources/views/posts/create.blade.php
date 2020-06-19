@@ -20,8 +20,16 @@
                         enctype="multipart/form-data"
                     >
                         <div class="form-group">
+                            <label>Categoría</label>
+                            <input type="text" name="title" class="form-control">
+                        </div>
+                        <div class="form-group">
                             <label>Título *</label>
                             <input type="text" name="title" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>URL amigable</label>
+                            <input type="text" name="title" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Image</label>
