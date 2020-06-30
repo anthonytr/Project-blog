@@ -17,15 +17,15 @@ class CreatePostsTable extends Migration
             $table->id();
 
             $table->bigInteger('user_id')->unsigned();
-            $table->bigInteger('category_id')->unsigned();
+            $table->bigInteger('category_id')->unsigned()->nullable();
 
-            $table->string('title', 128);
-            $table->string('slug', 128)->unique();
+            $table->string('title', 128)->nullable();
+            $table->string('slug', 128)->unique()->nullable();
 
             $table->string('image')->nullable();
 
             $table->mediumText('excerpt')->nullable();
-            $table->text('body');
+            $table->text('body')->nullable();
             $table->enum('status', ['PUBLISHED', 'DRAFT'])->default('DRAFT');
 
             $table->text('iframe')->nullable();
