@@ -3,17 +3,22 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-10 col-md-offset-1">
+
             <div class="card mb-4">
 
-                @if ($post->image)
+                {{-- @if ($post->image)
                     <img src="{{ $post->get_image }}" class="card-img-top">
-                @endif
+                @endif --}}
 
                 <div class="card-body">
                     <h1 class="card-title">{{ $post->title }} </h1>
-
-                    <h5 class="card-title">{{ $post->category->title }} </h5>
+                    <div class="panel-heading">
+                        Catergoría
+                        <a href="{{ route('category', $post->category->slug) }}">
+                            {{ $post->category->name }}
+                        </a>
+                    </div>
                     @if ($post->image)
                         <img src="{{ $post->image }}" class="img-responsive">
                         <div class="embed-responsive embed-responsive-16by9">

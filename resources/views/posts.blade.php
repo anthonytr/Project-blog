@@ -3,11 +3,14 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-10 col-md-offset-1">
+
+            <h1>Lista de artículos</h1>
+
             @foreach($posts as $post)
             <div class="card mb-4">
                 @if ($post->image)
-                    <img src="{{ $post->image }}" class="card-img-top">
+                    <img src="{{ $post->image }}" class="img-responsive">
                 @elseif ($post->iframe)
                     <div class="embed-responsive embed-responsive-16by9">
                     {!! $post->iframe !!}
