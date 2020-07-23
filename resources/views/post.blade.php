@@ -20,8 +20,8 @@
                         </a>
                     </div>
                     @if ($post->image)
-                        <img src="{{ $post->image }}" class="img-responsive">
-                        <div class="embed-responsive embed-responsive-16by9">
+                        <div class="embed-responsive">
+                            <img src="{{ $post->image }}" class="img-responsive">
                             {!! $post->iframe !!}
                         </div>
                     @endif
