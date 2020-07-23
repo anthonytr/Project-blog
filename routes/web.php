@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'PageController@posts');
 Route::get('blog/{slug}', 'PageController@post')->name('posts.single');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/category/{slug}', 'Web\PageController@category')->name('category');
